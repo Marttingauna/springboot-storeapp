@@ -44,5 +44,5 @@ public class ProductoService {
         return productoRepository.existsByName(name);
     }
 
-    public Optional<Producto> findByName(String name){ return productoRepository.findByNameContaining(name); }
+    public List<Producto> findByName(String name){ return productoRepository.findByNameContaining(name); }
 }

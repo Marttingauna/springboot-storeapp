@@ -38,7 +38,7 @@ public class ProductoController {
     @GetMapping("/detailname/{nombre}")
     public ResponseEntity<Producto> getByNombre(@PathVariable("nombre") String nombre){
         
-        Producto producto = productoService.findByName(nombre).get();
+        List<Producto> producto = productoService.findByName(nombre);
         return new ResponseEntity(producto, HttpStatus.OK);
     }
 

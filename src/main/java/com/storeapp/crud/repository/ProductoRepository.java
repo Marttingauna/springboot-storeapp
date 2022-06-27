@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -15,6 +16,6 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer> {
     boolean existsByName(String nombre);
 
     //Spring realizara una consulta SQL similar a: SELECT * FROM Product p WHERE p.name LIKE CONCAT('%', :name, '%')
-    Optional<Producto> findByNameContaining(@RequestParam("name") String name);
+    List<Producto> findByNameContaining(@RequestParam("name") String name);
 
 }
